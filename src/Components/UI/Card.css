@@ -1,0 +1,15 @@
+.card {
+  width: 50rem;
+  background-color: #181823;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 30rem;
+    padding: 1rem;
+  }
+}
