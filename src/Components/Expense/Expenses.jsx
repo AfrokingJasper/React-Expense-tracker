@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ExpenseItems from "./ExpenseItems";
+import NewExpenses from "../NewForm/NewExpenses";
 const DUMMY_EXPENSES = [
   {
     id: "e1",
@@ -30,8 +31,15 @@ const DUMMY_EXPENSES = [
 const Expenses = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
+  const addExpenseHnadler = (expense) => {
+    setExpenses((prevExpense) => {
+      return [expense, ...prevExpense];
+    });
+  };
+
   return (
     <div>
+      <NewExpenses onAddExpense={addExpenseHnadler} />
       <ExpenseItems items={expenses} />
     </div>
   );

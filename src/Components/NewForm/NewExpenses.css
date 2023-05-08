@@ -1,0 +1,15 @@
+.new__expenses-container {
+  width: 50rem;
+  background-color: #a892ee;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .new__expenses-container {
+    width: 100%;
+  }
+}
