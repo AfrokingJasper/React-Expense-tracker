@@ -1,5 +1,5 @@
 .expense__filter-container {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   display: flex;
   justify-content: space-between;
   background-color: blue;
@@ -23,7 +23,6 @@
   }
 
   .expense__filter-container {
-    padding: 1rem 1rem;
     font-size: 1rem;
   }
 }
