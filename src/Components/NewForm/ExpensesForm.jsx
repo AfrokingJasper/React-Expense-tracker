@@ -25,9 +25,9 @@ const ExpensesForm = (props) => {
       amount: +enteredAmount,
       date: new Date(enteredDate),
     };
-    // console.log(expenseData);
-    props.onSaveExpenseData(expenseData);
 
+    props.onSaveExpenseData(expenseData);
+    props.onCancel();
     setEnteredTtile("");
     setEnteredAmount("");
     setEnteredDate("");
@@ -40,6 +40,7 @@ const ExpensesForm = (props) => {
           <input
             type="text"
             value={enteredTitle}
+            required
             onChange={titleChangeHandler}
           />
         </div>
@@ -47,6 +48,7 @@ const ExpensesForm = (props) => {
           <label>Amount</label>
           <input
             type="number"
+            required
             value={enteredAmount}
             onChange={amountChangeHandler}
           />
@@ -57,13 +59,18 @@ const ExpensesForm = (props) => {
             min="2023-04-01"
             max="2025-12-31"
             type="date"
+            required
             value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
       </div>
       <div className="expense__button-cobtainer">
-        <button type="button" className="expense__button">
+        <button
+          onClick={props.onCancel}
+          type="button"
+          className="expense__button"
+        >
           Cancel
         </button>
         <button type="submit" className="expense__button">

@@ -36,6 +36,12 @@
   border-radius: 0.5rem;
 }
 
+.error__message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 600px) {
   .expense__price {
     padding: 0.3rem 0.5rem;
@@ -48,5 +54,9 @@
 
   .expense__item-left {
     gap: 0.5rem;
+  }
+
+  .error__message {
+    font-size: 1rem;
   }
 }

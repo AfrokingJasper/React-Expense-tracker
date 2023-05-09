@@ -1,46 +1,26 @@
 import React, { useState } from "react";
 import ExpenseItems from "./ExpenseItems";
-import NewExpenses from "../NewForm/NewExpenses";
-const DUMMY_EXPENSES = [
-  {
-    id: "e1",
-    title: "Toilet Paper",
-    amount: 94.12,
-    date: new Date(2023, 2, 28),
-  },
-  {
-    id: "e2",
-    title: "Car Insurance",
-    amount: 294.67,
-    date: new Date(2021, 5, 28),
-  },
-  {
-    id: "e3",
-    title: "New Desk",
-    amount: 294.67,
-    date: new Date(2021, 8, 28),
-  },
-  {
-    id: "e4",
-    title: "Car Insurance",
-    amount: 2943.67,
-    date: new Date(2020, 6, 28),
-  },
-];
+import Card from "../UI/Card";
+import ExpenseFilter from "./ExpenseFilter";
 
-const Expenses = () => {
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
-
-  const addExpenseHnadler = (expense) => {
-    setExpenses((prevExpense) => {
-      return [expense, ...prevExpense];
-    });
+const Expenses = (props) => {
+  const [filteredYear, setFilteredYear] = useState("2023");
+  const changeFilterHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
   };
 
+  const filteredExpense = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
   return (
     <div>
-      <NewExpenses onAddExpense={addExpenseHnadler} />
-      <ExpenseItems items={expenses} />
+      <Card>
+        <ExpenseFilter
+          selected={filteredYear}
+          onChangeFilter={changeFilterHandler}
+        />
+        <ExpenseItems items={filteredExpense} />
+      </Card>
     </div>
   );
 };

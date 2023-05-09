@@ -6,10 +6,28 @@
   padding: 2rem;
   color: white;
   margin-bottom: 3rem;
+  text-align: center;
+}
+
+.expense__button {
+  background-color: #510674;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-color: #510674;
+  border-radius: 0.5rem;
+  transition: all 0.25s;
 }
 
 @media screen and (max-width: 600px) {
   .new__expenses-container {
     width: 100%;
+    padding: 1rem;
+  }
+  .expense__button {
+    background-color: #510674;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 }

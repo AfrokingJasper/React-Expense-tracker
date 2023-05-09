@@ -1,13 +1,8 @@
 import React from "react";
 import "./Card.css";
-import Expenses from "../Expense/Expenses";
 
-const Card = () => {
-  return (
-    <div className="card">
-      <Expenses />
-    </div>
-  );
+const Card = (props) => {
+  return <div className="card">{props.children}</div>;
 };
 
 export default Card;

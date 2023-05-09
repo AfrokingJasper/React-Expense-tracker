@@ -3,6 +3,12 @@ import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 
 const ExpenseItems = (props) => {
+  if (props.items.length === 0) {
+    return (
+      <div className="error__message">No Expenses found for this year</div>
+    );
+  }
+
   return (
     <div className="expense__items-container">
       {props.items.map((exp) => {
